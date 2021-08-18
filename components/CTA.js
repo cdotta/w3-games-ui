@@ -1,13 +1,34 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import React from 'react';
 
 import CTAInfo from './CTAInfo';
 
-export default function CTA({ title, description }) {
+export default function CTA({
+  title,
+  description,
+  primaryButtonText,
+  secondaryButtonText,
+}) {
   return (
-    <SimpleGrid columns={2} spacing={10}>
-      <CTAInfo title={title} description={description} />
-      <Box>Image</Box>
-    </SimpleGrid>
+    <Box
+      display="flex"
+      bgImage="url('/images/desert-background.png')"
+      bgRepeat="no-repeat"
+      bgSize="cover"
+      height="100vh"
+      position="relative"
+    >
+      <Box h="90%" position="absolute" bottom="0" right="50">
+        <Image src="/images/pirate.png" alt="pirate" />
+      </Box>
+      <Box maxW={['md', 'lg']}>
+        <CTAInfo
+          title={title}
+          description={description}
+          primaryButtonText={primaryButtonText}
+          secondaryButtonText={secondaryButtonText}
+        />
+      </Box>
+    </Box>
   );
 }
