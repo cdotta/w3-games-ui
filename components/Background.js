@@ -12,6 +12,7 @@ export default function Background({ bgImageUrl, secondaryImage }) {
         width="100%"
         height="100%"
         zIndex="hide"
+        pointerEvents="none"
       >
         {secondaryImage}
       </Box>
