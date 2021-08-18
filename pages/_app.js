@@ -5,6 +5,7 @@ import '@fontsource/nunito';
 import '@fontsource/exo';
 
 import { ChakraProvider } from '@chakra-ui/react';
+
 import theme from '../lib/theme';
 
 function MyApp({ Component, pageProps }) {
