@@ -21,6 +21,7 @@ export default function CTAInfo({
         <Button
           size="lg"
           colorScheme="customBlack"
+          mr={6}
           rightIcon={<NoteTextIcon w={6} h={6} />}
         >
           {primaryButtonText}
@@ -30,7 +31,6 @@ export default function CTAInfo({
         <Button
           size="lg"
           colorScheme="customOrange"
-          ml="6"
           rightIcon={<ArrowSquareDownIcon w={6} h={6} />}
         >
           {secondaryButtonText}
