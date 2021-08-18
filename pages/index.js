@@ -8,6 +8,8 @@ export default function Home() {
       <CTA
         title="Innovating gaming with the power of blockchain"
         description="Find out how you can be a part of the drive to advance web3 games and take your web3 game project to a whole new level"
+        primaryButtonText="Read whitepaper"
+        secondaryButtonText="Find out more"
       />
     </div>
   );
