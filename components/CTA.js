@@ -1,4 +1,4 @@
-import { Box, Image } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import CTAInfo from './CTAInfo';
@@ -8,26 +8,25 @@ export default function CTA({
   description,
   primaryButtonText,
   secondaryButtonText,
+  background,
 }) {
   return (
-    <Box
-      display="flex"
-      bgImage="url('/images/desert-background.png')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-      height="100vh"
-      position="relative"
-    >
-      <Box h="90%" position="absolute" bottom="0" right="50">
-        <Image src="/images/pirate.png" alt="pirate" />
-      </Box>
-      <Box maxW={['md', 'lg']}>
-        <CTAInfo
-          title={title}
-          description={description}
-          primaryButtonText={primaryButtonText}
-          secondaryButtonText={secondaryButtonText}
-        />
+    <Box display="flex" height="100vh" position="relative">
+      {background}
+      <Box
+        width={['100%', '100%', '50%']}
+        display="flex"
+        alignItems="center"
+        justifyContent="flex-end"
+      >
+        <Box maxW="md">
+          <CTAInfo
+            title={title}
+            description={description}
+            primaryButtonText={primaryButtonText}
+            secondaryButtonText={secondaryButtonText}
+          />
+        </Box>
       </Box>
     </Box>
   );
