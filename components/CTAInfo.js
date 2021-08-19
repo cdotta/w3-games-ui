@@ -1,13 +1,13 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { ArrowSquareDownIcon, NoteTextIcon } from './icons';
-
 export default function CTAInfo({
   title,
   description,
   primaryButtonText,
+  primaryButtonIcon,
   secondaryButtonText,
+  secondaryButtonIcon,
 }) {
   return (
     <Box>
@@ -22,7 +22,7 @@ export default function CTAInfo({
           size="lg"
           colorScheme="customBlack"
           mr={6}
-          rightIcon={<NoteTextIcon w={6} h={6} />}
+          rightIcon={primaryButtonIcon}
         >
           {primaryButtonText}
         </Button>
@@ -31,7 +31,7 @@ export default function CTAInfo({
         <Button
           size="lg"
           colorScheme="customOrange"
-          rightIcon={<ArrowSquareDownIcon w={6} h={6} />}
+          rightIcon={secondaryButtonIcon}
         >
           {secondaryButtonText}
         </Button>
