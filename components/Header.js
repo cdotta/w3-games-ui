@@ -76,7 +76,7 @@ export default function Header() {
           </Box>
         ))}
       </Flex>
-      <Flex h="100%" alignItems="center">
+      <Flex h="100%" alignItems="center" display={['none', 'none', 'flex']}>
         <HStack mr="4">
           <IconButton
             aria-label="Telegram icon"
