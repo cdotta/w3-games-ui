@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 import CTAInfo from './CTAInfo';
@@ -9,15 +9,18 @@ export default function CTA({
   primaryButtonText,
   secondaryButtonText,
   background,
+  additionalContentHeight = '0px',
 }) {
   return (
-    <Box display="flex" height="100vh" position="relative">
+    <Flex
+      height={`calc(100vh - ${additionalContentHeight})`}
+      position="relative"
+    >
       {background}
-      <Box
+      <Flex
         width={['100%', '100%', '50%']}
-        display="flex"
         alignItems="center"
-        justifyContent="flex-end"
+        justifyContent={['center', 'center', 'flex-end']}
       >
         <Box maxW="md">
           <CTAInfo
@@ -27,7 +30,7 @@ export default function CTA({
             secondaryButtonText={secondaryButtonText}
           />
         </Box>
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 }
