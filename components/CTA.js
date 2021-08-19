@@ -7,7 +7,9 @@ export default function CTA({
   title,
   description,
   primaryButtonText,
+  primaryButtonIcon,
   secondaryButtonText,
+  secondaryButtonIcon,
   background,
   additionalContentHeight = '0px',
 }) {
@@ -27,7 +29,9 @@ export default function CTA({
             title={title}
             description={description}
             primaryButtonText={primaryButtonText}
+            primaryButtonIcon={primaryButtonIcon}
             secondaryButtonText={secondaryButtonText}
+            secondaryButtonIcon={secondaryButtonIcon}
           />
         </Box>
       </Flex>
