@@ -15,8 +15,8 @@ const news = [
     time,
     title,
     description,
-    imageUrl: '/images/dinox.png',
-    imageAlt: 'dinox',
+    imageUrl: '/images/dinox-world.png',
+    imageAlt: 'dinox world',
   },
   {
     time,
