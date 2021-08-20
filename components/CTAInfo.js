@@ -8,10 +8,11 @@ export default function CTAInfo({
   primaryButtonIcon,
   secondaryButtonText,
   secondaryButtonIcon,
+  textAlign,
 }) {
   return (
     <Box>
-      <Heading size="2xl" mb="4" color="white">
+      <Heading size="2xl" mb="4" color="white" textAlign={textAlign}>
         {title}
       </Heading>
       <Text fontSize="xl" mb="8" color="white">
