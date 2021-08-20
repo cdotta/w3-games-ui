@@ -8,7 +8,7 @@ import { GamesIcon } from '../icons/index';
 export default function GamesHomeCTA() {
   return (
     <HCTA
-      background={<Background bgColor="warmBlack" />}
+      background={<Background bgColor="black" />}
       ctaInfo={
         <CTAInfo
           title="Access the very best web3 games"
