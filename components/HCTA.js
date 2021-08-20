@@ -10,9 +10,10 @@ export default function HCTA({
 }) {
   return (
     <HStack
-      height={`calc(100vh - ${additionalContentHeight})`}
+      minHeight={`calc(100vh - ${additionalContentHeight})`}
       position="relative"
       align="center"
+      overflow="hidden"
     >
       {background}
       <Flex

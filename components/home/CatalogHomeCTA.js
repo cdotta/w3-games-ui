@@ -17,7 +17,7 @@ const images = [
 export default function CatalogHomeCTA() {
   return (
     <VCTA
-      background={<Background bgColor="warmBlack" />}
+      background={<Background bgColor="black" />}
       direction="column"
       ctaInfo={
         <CTAInfo

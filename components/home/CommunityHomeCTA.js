@@ -8,7 +8,7 @@ import { GamesIcon } from '../icons/index';
 export default function CommunityHomeCTA() {
   return (
     <HCTA
-      background={<Background bgColor="warmBlack" />}
+      background={<Background bgColor="black" />}
       isReverse
       ctaInfo={
         <CTAInfo
