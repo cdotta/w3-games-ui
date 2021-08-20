@@ -1,3 +1,4 @@
+import { Flex, Image } from '@chakra-ui/react';
 import React from 'react';
 
 import Background from '../Background';
@@ -17,6 +18,11 @@ export default function CommunityHomeCTA() {
           secondaryButtonText="Discover games"
           secondaryButtonIcon={<GamesIcon w={6} h={6} />}
         />
+      }
+      ctaContent={
+        <Flex pl="20">
+          <Image src="/images/community.png" alt="community" />
+        </Flex>
       }
     />
   );
