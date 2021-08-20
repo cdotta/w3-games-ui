@@ -15,7 +15,7 @@ export default function CTAInfo({
       <Heading size="2xl" mb="4" color="white" textAlign={textAlign}>
         {title}
       </Heading>
-      <Text fontSize="xl" mb="8" color="white">
+      <Text fontSize="xl" mb="8" color="white" textAlign={textAlign}>
         {description}
       </Text>
       {primaryButtonText && (

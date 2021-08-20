@@ -9,13 +9,14 @@ export default function HCTA({
 }) {
   return (
     <VStack
-      height={`calc(100vh - ${additionalContentHeight})`}
+      minHeight={`calc(100vh - ${additionalContentHeight})`}
       position="relative"
       align="center"
       justifyContent="center"
+      overflow="hidden"
     >
       {background}
-      <Box>{ctaInfo}</Box>
+      <Box maxW="xl">{ctaInfo}</Box>
       <Box>{ctaContent}</Box>
     </VStack>
   );
