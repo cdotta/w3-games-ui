@@ -5,9 +5,8 @@ export default function Background({ bgImageUrl, bgColor, secondaryImage }) {
   return (
     <>
       <Box
-        bgImage={`url('${bgImageUrl}')`}
+        background={`url('${bgImageUrl}') no-repeat center center fixed`}
         bgColor={bgColor}
-        bgRepeat="no-repeat"
         bgSize="cover"
         position="absolute"
         width="100%"
