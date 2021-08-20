@@ -1,24 +1,11 @@
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  IconButton,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import {
-  DiscordIcon,
-  MediumIcon,
-  TelegramIcon,
-  TwitterIcon,
-  UserIcon,
-} from './icons';
+import { UserIcon } from './icons';
+import MediaButtonsGroup from './MediaButtonsGroup';
 
 const NAV_ITEMS = [
   { label: 'Home', route: '/' },
@@ -62,7 +49,7 @@ export default function Header() {
     >
       <Flex alignItems="center">
         <Box pr="14" flexShrink="0">
-          <Image width="40" height="37" src="/svgs/w3-logo.svg" alt="w3-logo" />
+          <Image width="40" height="37" src="/svgs/w3-logo.svg" alt="w3 logo" />
         </Box>
         {NAV_ITEMS.map((navItem) => (
           <Box
@@ -77,28 +64,7 @@ export default function Header() {
         ))}
       </Flex>
       <Flex h="100%" alignItems="center" display={['none', 'none', 'flex']}>
-        <HStack mr="4">
-          <IconButton
-            aria-label="Telegram icon"
-            icon={<TelegramIcon h={6} w={6} />}
-            colorScheme="transparent"
-          />
-          <IconButton
-            aria-label="Discord icon"
-            icon={<DiscordIcon h={6} w={6} />}
-            colorScheme="transparent"
-          />
-          <IconButton
-            aria-label="Twitter icon"
-            icon={<TwitterIcon h={6} w={6} />}
-            colorScheme="transparent"
-          />
-          <IconButton
-            aria-label="medium icon"
-            icon={<MediumIcon h={6} w={6} />}
-            colorScheme="transparent"
-          />
-        </HStack>
+        <MediaButtonsGroup mr="4" />
         <Button
           fontSize="md"
           h="100%"

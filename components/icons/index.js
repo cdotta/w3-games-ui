@@ -1,5 +1,6 @@
 import { createIcon } from '@chakra-ui/icon';
 
+import arrowRightSvg from '../../public/svgs/arrow-right.svg';
 import arrowSquareDownSvg from '../../public/svgs/arrow-square-down.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
@@ -19,6 +20,12 @@ export const ArrowSquareDownIcon = createIcon({
   displayName: 'ArrowSquareDownIcon',
   viewBox: '0 0 20 20',
   path: arrowSquareDownSvg(),
+});
+
+export const ArrowRightIcon = createIcon({
+  displayName: 'ArrowRightIcon',
+  viewBox: '0 0 17 14',
+  path: arrowRightSvg(),
 });
 
 export const GamesIcon = createIcon({
