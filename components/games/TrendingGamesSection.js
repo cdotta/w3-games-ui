@@ -3,56 +3,40 @@ import React from 'react';
 
 import GameCard from './GameCard';
 
-const score = 4.8;
-const genre = 'Action | Battle';
-const author = 'CoderDrew Studios';
-const year = '2021';
+const placeholderGame = {
+  imageSrc: '/images/games/placeholder.png',
+  score: 4.8,
+  genre: 'Action | Battle',
+  author: 'CoderDrew Studios',
+  year: '2021',
+  isAvailable: true,
+};
 
 const trendingGames = [
   {
+    ...placeholderGame,
     imageSrc: '/images/games/axie-infinity.png',
     name: 'Axie Infinity',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
+    ...placeholderGame,
     imageSrc: '/images/games/lost-relics.png',
     name: 'Lost Relics',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
+    ...placeholderGame,
     imageSrc: '/images/games/splinterlands.png',
     name: 'Splinterlands',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
+    ...placeholderGame,
     imageSrc: '/images/games/age-of-rust.png',
     name: 'Age of Rust',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
+    ...placeholderGame,
     imageSrc: '/images/games/skyweaver.png',
     name: 'Skyweaver',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
 ];
 

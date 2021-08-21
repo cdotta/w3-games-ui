@@ -19,6 +19,7 @@ export default function GameCard({
   genre,
   author,
   year,
+  isAvailable,
 }) {
   return (
     <Flex direction="column">
@@ -61,9 +62,9 @@ export default function GameCard({
         borderTopRadius="0"
         borderBottomRadius="14px"
         mt="1"
-        colorScheme="greenButton"
+        colorScheme={isAvailable ? 'greenButton' : 'grayButton'}
       >
-        Play now for free
+        {isAvailable ? 'Play now for free' : 'Coming soon'}
       </Button>
     </Flex>
   );
