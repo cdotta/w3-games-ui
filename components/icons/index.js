@@ -2,6 +2,7 @@ import { createIcon } from '@chakra-ui/icon';
 
 import arrowRightSvg from '../../public/svgs/arrow-right.svg';
 import arrowSquareDownSvg from '../../public/svgs/arrow-square-down.svg';
+import clockSvg from '../../public/svgs/clock.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
 import mediumSvg from '../../public/svgs/medium.svg';
@@ -62,4 +63,10 @@ export const MediumIcon = createIcon({
   displayName: 'MediumIcon',
   viewBox: '0 0 24 24',
   path: mediumSvg(),
+});
+
+export const ClockIcon = createIcon({
+  displayName: 'ClockIcon',
+  viewBox: '0 0 24 24',
+  path: clockSvg(),
 });
