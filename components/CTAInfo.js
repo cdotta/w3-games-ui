@@ -4,8 +4,7 @@ import React from 'react';
 export default function CTAInfo({
   title,
   description,
-  primaryButtonText,
-  primaryButtonIcon,
+  primaryButton,
   secondaryButtonText,
   secondaryButtonIcon,
   textAlign,
@@ -18,14 +17,16 @@ export default function CTAInfo({
       <Text fontSize="xl" mb="8" color="white" textAlign={textAlign}>
         {description}
       </Text>
-      {primaryButtonText && (
+      {primaryButton && (
         <Button
           size="lg"
           colorScheme="customBlack"
           mr={6}
-          rightIcon={primaryButtonIcon}
+          rightIcon={primaryButton.icon}
+          bgColor={primaryButton.bgColor}
+          color={primaryButton.color}
         >
-          {primaryButtonText}
+          {primaryButton.title}
         </Button>
       )}
       {secondaryButtonText && (
