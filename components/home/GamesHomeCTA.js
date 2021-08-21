@@ -37,6 +37,8 @@ const images = {
   ],
 };
 
+// TODO: Replace Image
+
 export default function GamesHomeCTA() {
   const imageMapFunction = ({ src, alt, width, height }, index) => (
     <Image
@@ -63,10 +65,14 @@ export default function GamesHomeCTA() {
       ctaContent={
         <HStack>
           <VStack>
-            {images.firstStack.map((image) => imageMapFunction(image))}
+            {images.firstStack.map((image, index) =>
+              imageMapFunction(image, index),
+            )}
           </VStack>
           <VStack>
-            {images.secondStack.map((image) => imageMapFunction(image))}
+            {images.secondStack.map((image, index) =>
+              imageMapFunction(image, index),
+            )}
           </VStack>
         </HStack>
       }

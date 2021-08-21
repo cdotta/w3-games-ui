@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, VStack } from '@chakra-ui/react';
+import { Button, Flex, Heading, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
 
 import GameCard from './GameCard';
@@ -44,8 +44,8 @@ export default function TrendingGamesSection() {
   return (
     <VStack
       background="black"
-      paddingX="40"
-      paddingY="20"
+      paddingX={['2', '40']}
+      paddingY={['2', '20']}
       spacing="10"
       alignItems="flex-start"
     >
@@ -57,11 +57,17 @@ export default function TrendingGamesSection() {
           View More
         </Button>
       </HStack>
-      <HStack justify="center" width="100%" spacing="6">
-        {trendingGames.map((trendingGame) => (
-          <GameCard key={trendingGames.name} {...trendingGame} />
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        width="100%"
+        wrap="wrap"
+        gridGap="4"
+      >
+        {trendingGames.map((trendingGame, index) => (
+          <GameCard key={index} {...trendingGame} />
         ))}
-      </HStack>
+      </Flex>
     </VStack>
   );
 }

@@ -20,6 +20,8 @@ const images = [
   { src: '/images/partners/blizzard.png', alt: 'blizzard' },
 ];
 
+// TODO: Replace Image
+
 export default function PartnersHomeCTA() {
   return (
     <VCTA

@@ -20,7 +20,12 @@ const filterTags = ['Adventure', 'Card', 'Action', 'Sports', 'Puzzle'];
 
 export default function LandingGamesCTA() {
   return (
-    <Box bgColor="black" pt="20" paddingX="40">
+    <Box
+      bgColor="black"
+      pt={['2', '20']}
+      paddingX={['2', '40']}
+      overflow="hidden"
+    >
       <Container maxWidth="container.md">
         <Heading size="2xl" color="white" textAlign="center">
           Discover leading web 3 games from top creators
@@ -31,7 +36,12 @@ export default function LandingGamesCTA() {
           collectibles.
         </Text>
       </Container>
-      <HStack mt="12" mb="10" spacing="4">
+      <HStack
+        mt={['4', '12']}
+        mb={['2', '10']}
+        spacing="4"
+        flexWrap={['wrap', 'wrap', 'wrap', 'nowrap']}
+      >
         <InputGroup>
           <InputLeftElement pointerEvents="none">
             <SearchIcon />

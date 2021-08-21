@@ -26,7 +26,7 @@ export default function CatalogHomeCTA() {
         />
       }
       ctaContent={
-        <SimpleGrid columns="3" spacing="8">
+        <SimpleGrid columns={['1', '2', '3']} spacing="8">
           {images.map(({ src, alt }, index) => (
             <Image
               height="352px"

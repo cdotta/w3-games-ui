@@ -1,10 +1,11 @@
-import { Circle, HStack, Text } from '@chakra-ui/react';
+import { Circle, HStack, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
 import { ArrowLeftIcon, ArrowRightIcon } from './icons/index';
 
 export default function Paginator({ activePage }) {
-  const pages = Array.from({ length: 10 });
+  const noPages = useBreakpointValue([2, 10]);
+
   return (
     <HStack
       bgColor="warmBlack"
@@ -17,7 +18,7 @@ export default function Paginator({ activePage }) {
         <ArrowLeftIcon />
         <Text color="white">Prev</Text>
       </HStack>
-      {pages.map((_, index) => {
+      {Array.from({ length: noPages }).map((_, index) => {
         const pageNumber = index + 1;
         return (
           <Circle
