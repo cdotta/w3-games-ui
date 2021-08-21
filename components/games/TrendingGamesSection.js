@@ -1,65 +1,42 @@
-import {
-  Box,
-  Button,
-  Circle,
-  Heading,
-  HStack,
-  Image,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Button, Heading, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
 
-const score = 4.8;
-const genre = 'Action | Battle';
-const author = 'CoderDrew Studios';
-const year = '2021';
+import GameCard from './GameCard';
+
+const placeholderGame = {
+  imageSrc: '/images/games/placeholder.png',
+  score: 4.8,
+  genre: 'Action | Battle',
+  author: 'CoderDrew Studios',
+  year: '2021',
+  isAvailable: true,
+};
 
 const trendingGames = [
   {
-    src: '/images/games/axie-infinity.png',
+    ...placeholderGame,
+    imageSrc: '/images/games/axie-infinity.png',
     name: 'Axie Infinity',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
-    src: '/images/games/lost-relics.png',
+    ...placeholderGame,
+    imageSrc: '/images/games/lost-relics.png',
     name: 'Lost Relics',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
-    src: '/images/games/splinterlands.png',
+    ...placeholderGame,
+    imageSrc: '/images/games/splinterlands.png',
     name: 'Splinterlands',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
-    src: '/images/games/age-of-rust.png',
+    ...placeholderGame,
+    imageSrc: '/images/games/age-of-rust.png',
     name: 'Age of Rust',
-    price: undefined,
-    score,
-    genre,
-    author,
-    year,
   },
   {
-    src: '/images/games/skyweaver.png',
+    ...placeholderGame,
+    imageSrc: '/images/games/skyweaver.png',
     name: 'Skyweaver',
-    price: undefined,
-    score,
-    genre: '',
-    author: '',
-    year: '',
   },
 ];
 
@@ -81,33 +58,8 @@ export default function TrendingGamesSection() {
         </Button>
       </HStack>
       <HStack justify="center" width="100%" spacing="6">
-        {trendingGames.map(({ src, name, score }, index) => (
-          <Box key={index}>
-            <Image
-              borderTopRadius="14px"
-              height="265px"
-              width="204px"
-              src={src}
-              alt="asdf"
-              fit="cover"
-            />
-            <HStack justify="space-between" mt="4">
-              <Text color="white" fontSize="lg">
-                {name}
-              </Text>
-              <Box>
-                <Circle
-                  size="24px"
-                  border="1px solid"
-                  borderColor="customGreen"
-                >
-                  <Text as="span" color="customGreen" fontSize="xs">
-                    {score}
-                  </Text>
-                </Circle>
-              </Box>
-            </HStack>
-          </Box>
+        {trendingGames.map((trendingGame) => (
+          <GameCard key={trendingGames.name} {...trendingGame} />
         ))}
       </HStack>
     </VStack>
