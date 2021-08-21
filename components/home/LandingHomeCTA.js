@@ -14,8 +14,10 @@ export default function LandingHomeCTA() {
         <CTAInfo
           title="Innovating gaming with the power of blockchain"
           description="Find out how you can be a part of the drive to advance web3 games and take your web3 game project to a whole new level"
-          primaryButtonText="Read whitepaper"
-          primaryButtonIcon={<NoteTextIcon w={6} h={6} />}
+          primaryButton={{
+            title: 'Read whitepaper',
+            icon: <NoteTextIcon w={6} h={6} />,
+          }}
           secondaryButtonText="Find out more"
           secondaryButtonIcon={<ArrowSquareDownIcon w={6} h={6} />}
         />
