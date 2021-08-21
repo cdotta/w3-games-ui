@@ -54,8 +54,8 @@ export default function ComingSoonGamesCTA() {
   return (
     <VStack
       background="black"
-      paddingX="40"
-      paddingY="20"
+      paddingX={['2', '40']}
+      paddingY={['2', '20']}
       spacing="10"
       alignItems="flex-start"
     >
@@ -67,12 +67,11 @@ export default function ComingSoonGamesCTA() {
           View More
         </Button>
       </HStack>
-      <HStack justify="center" width="100%" spacing="16">
+      <Flex justify="center" width="100%" gridGap={['2', '16']} wrap="wrap">
         {comingSoonGames.map(({ title, description, src, tags }, index) => (
           <Flex
             key={index}
             position="relative"
-            flexShrink="0"
             w="524px"
             h="300px"
             backgroundImage={`linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.51) 48.96%, rgba(0, 0, 0, 0) 100%), url('${src}')`}
@@ -109,7 +108,7 @@ export default function ComingSoonGamesCTA() {
             </VStack>
           </Flex>
         ))}
-      </HStack>
+      </Flex>
     </VStack>
   );
 }

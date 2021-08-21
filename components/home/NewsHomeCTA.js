@@ -1,4 +1,4 @@
-import { Box, HStack, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 
@@ -51,8 +51,8 @@ export default function NewsHomeCTA() {
         />
       }
       ctaContent={
-        <VStack spacing="4">
-          <HStack spacing="8">
+        <>
+          <Flex gridGap={['2', '8']} wrap="wrap" justifyContent="center">
             {news.map(
               ({ imageUrl, imageAlt, time, title, description }, index) => (
                 <Box key={index} maxWidth="22rem">
@@ -74,7 +74,7 @@ export default function NewsHomeCTA() {
                 </Box>
               ),
             )}
-          </HStack>
+          </Flex>
           <HStack
             width="100%"
             justifyContent="flex-end"
@@ -85,7 +85,7 @@ export default function NewsHomeCTA() {
             <Text color="white">Read more news</Text>
             <ArrowRightIcon />
           </HStack>
-        </VStack>
+        </>
       }
     />
   );

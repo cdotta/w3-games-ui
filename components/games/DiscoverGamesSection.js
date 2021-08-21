@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, SimpleGrid, VStack } from '@chakra-ui/react';
+import { Button, Flex, Heading, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
 
 import Paginator from '../Paginator';
@@ -63,8 +63,8 @@ export default function DiscoverGamesSection() {
   return (
     <VStack
       background="black"
-      paddingX="40"
-      paddingY="20"
+      paddingX={['2', '40']}
+      paddingY={['2', '20']}
       spacing="10"
       alignItems="flex-start"
     >
@@ -76,11 +76,18 @@ export default function DiscoverGamesSection() {
           View More
         </Button>
       </HStack>
-      <SimpleGrid columns="5" justify="center" width="100%" spacing="6">
-        {trendingGames.map((trendingGame) => (
-          <GameCard key={trendingGames.name} {...trendingGame} />
+
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        width="100%"
+        wrap="wrap"
+        gridGap="4"
+      >
+        {trendingGames.map((trendingGame, index) => (
+          <GameCard key={index} {...trendingGame} />
         ))}
-      </SimpleGrid>
+      </Flex>
       <Paginator activePage={1} />
     </VStack>
   );

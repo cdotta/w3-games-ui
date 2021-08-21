@@ -6,6 +6,8 @@ import CTAInfo from '../CTAInfo';
 import HCTA from '../HCTA';
 import { ArrowSquareDownIcon, NoteTextIcon } from '../icons/index';
 
+// TODO: Replace Image
+
 export default function LandingHomeCTA() {
   return (
     <HCTA
