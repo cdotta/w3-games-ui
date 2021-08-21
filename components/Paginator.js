@@ -21,7 +21,9 @@ export default function Paginator({ activePage }) {
         const pageNumber = index + 1;
         return (
           <Circle
-            bgColor={activePage === pageNumber ? 'red' : 'warmBlack'}
+            bgColor={
+              activePage === pageNumber ? 'customOrange.500' : 'warmBlack'
+            }
             width="28px"
             height="28px"
             key={pageNumber}
