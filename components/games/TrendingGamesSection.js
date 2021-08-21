@@ -1,14 +1,7 @@
-import {
-  Box,
-  Button,
-  Circle,
-  Heading,
-  HStack,
-  Image,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+import { Button, Heading, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
+
+import GameCard from './GameCard';
 
 const score = 4.8;
 const genre = 'Action | Battle';
@@ -17,7 +10,7 @@ const year = '2021';
 
 const trendingGames = [
   {
-    src: '/images/games/axie-infinity.png',
+    imageSrc: '/images/games/axie-infinity.png',
     name: 'Axie Infinity',
     price: undefined,
     score,
@@ -26,7 +19,7 @@ const trendingGames = [
     year,
   },
   {
-    src: '/images/games/lost-relics.png',
+    imageSrc: '/images/games/lost-relics.png',
     name: 'Lost Relics',
     price: undefined,
     score,
@@ -35,7 +28,7 @@ const trendingGames = [
     year,
   },
   {
-    src: '/images/games/splinterlands.png',
+    imageSrc: '/images/games/splinterlands.png',
     name: 'Splinterlands',
     price: undefined,
     score,
@@ -44,7 +37,7 @@ const trendingGames = [
     year,
   },
   {
-    src: '/images/games/age-of-rust.png',
+    imageSrc: '/images/games/age-of-rust.png',
     name: 'Age of Rust',
     price: undefined,
     score,
@@ -53,13 +46,13 @@ const trendingGames = [
     year,
   },
   {
-    src: '/images/games/skyweaver.png',
+    imageSrc: '/images/games/skyweaver.png',
     name: 'Skyweaver',
     price: undefined,
     score,
-    genre: '',
-    author: '',
-    year: '',
+    genre,
+    author,
+    year,
   },
 ];
 
@@ -81,33 +74,8 @@ export default function TrendingGamesSection() {
         </Button>
       </HStack>
       <HStack justify="center" width="100%" spacing="6">
-        {trendingGames.map(({ src, name, score }, index) => (
-          <Box key={index}>
-            <Image
-              borderTopRadius="14px"
-              height="265px"
-              width="204px"
-              src={src}
-              alt="asdf"
-              fit="cover"
-            />
-            <HStack justify="space-between" mt="4">
-              <Text color="white" fontSize="lg">
-                {name}
-              </Text>
-              <Box>
-                <Circle
-                  size="24px"
-                  border="1px solid"
-                  borderColor="customGreen"
-                >
-                  <Text as="span" color="customGreen" fontSize="xs">
-                    {score}
-                  </Text>
-                </Circle>
-              </Box>
-            </HStack>
-          </Box>
+        {trendingGames.map((trendingGame) => (
+          <GameCard key={trendingGames.name} {...trendingGame} />
         ))}
       </HStack>
     </VStack>

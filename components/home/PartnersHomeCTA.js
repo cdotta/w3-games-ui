@@ -6,18 +6,18 @@ import CTAInfo from '../CTAInfo';
 import VCTA from '../VCTA';
 
 const images = [
-  { src: '/images/binance.png', alt: 'binance' },
-  { src: '/images/coinbase.png', alt: 'coinbase' },
-  { src: '/images/solana.png', alt: 'solana' },
-  { src: '/images/polkadot.png', alt: 'polkadot' },
-  { src: '/images/docker.png', alt: 'docker' },
-  { src: '/images/dinox.png', alt: 'dinox' },
-  { src: '/images/activision.png', alt: 'activision' },
-  { src: '/images/fear.png', alt: 'fear' },
-  { src: '/images/microsoft.png', alt: 'microsoft' },
-  { src: '/images/theta.png', alt: 'theta' },
-  { src: '/images/maker.png', alt: 'maker' },
-  { src: '/images/blizzard.png', alt: 'blizzard' },
+  { src: '/images/partners/binance.png', alt: 'binance' },
+  { src: '/images/partners/coinbase.png', alt: 'coinbase' },
+  { src: '/images/partners/solana.png', alt: 'solana' },
+  { src: '/images/partners/polkadot.png', alt: 'polkadot' },
+  { src: '/images/partners/ethereum.png', alt: 'docker' },
+  { src: '/images/partners/dinox.png', alt: 'dinox' },
+  { src: '/images/partners/activision.png', alt: 'activision' },
+  { src: '/images/partners/fear.png', alt: 'fear' },
+  { src: '/images/partners/microsoft.png', alt: 'microsoft' },
+  { src: '/images/partners/theta.png', alt: 'theta' },
+  { src: '/images/partners/dao-maker.png', alt: 'dao maker' },
+  { src: '/images/partners/blizzard.png', alt: 'blizzard' },
 ];
 
 export default function PartnersHomeCTA() {

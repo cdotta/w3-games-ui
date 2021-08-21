@@ -8,16 +8,47 @@ import { GamesIcon } from '../icons/index';
 
 const images = {
   firstStack: [
-    { src: '/images/star-atlas.png', alt: 'star atlas' },
-    { src: '/images/axie-infinity.png', alt: 'axie infinity' },
+    {
+      src: '/images/games/gods-unchained.png',
+      alt: 'gods unchained',
+      width: '300px',
+      height: '300px',
+    },
+    {
+      src: '/images/games/axie-infinity.png',
+      alt: 'axie infinity',
+      width: '300px',
+      height: '380px',
+    },
   ],
   secondStack: [
-    { src: '/images/war-of-crypta.png', alt: 'war of crypta' },
-    { src: '/images/the-sandbox.png', alt: 'the sandbox' },
+    {
+      src: '/images/games/war-of-crypta.png',
+      alt: 'war of crypta',
+      width: '300px',
+      height: '380px',
+    },
+    {
+      src: '/images/games/the-sandbox.png',
+      alt: 'the sandbox',
+      width: '300px',
+      height: '300px',
+    },
   ],
 };
 
 export default function GamesHomeCTA() {
+  const imageMapFunction = ({ src, alt, width, height }, index) => (
+    <Image
+      key={index}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      fit="cover"
+    />
+  );
+
   return (
     <HCTA
       background={<Background bgColor="black" />}
@@ -32,14 +63,10 @@ export default function GamesHomeCTA() {
       ctaContent={
         <HStack>
           <VStack>
-            {images.firstStack.map(({ src, alt }, index) => (
-              <Image key={index} src={src} alt={alt} />
-            ))}
+            {images.firstStack.map((image) => imageMapFunction(image))}
           </VStack>
           <VStack>
-            {images.secondStack.map(({ src, alt }, index) => (
-              <Image key={index} src={src} alt={alt} />
-            ))}
+            {images.secondStack.map((image) => imageMapFunction(image))}
           </VStack>
         </HStack>
       }

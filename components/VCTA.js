@@ -13,7 +13,6 @@ export default function HCTA({
       position="relative"
       align="center"
       justifyContent="center"
-      overflow="hidden"
     >
       {background}
       <Box maxW="xl">{ctaInfo}</Box>
