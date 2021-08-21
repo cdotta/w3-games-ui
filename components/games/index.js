@@ -1,3 +1,4 @@
 import DigitalCollectiblesGamesCTA from './DigitalCollectiblesGamesCTA';
+import TrendingGamesSection from './TrendingGamesSection';
 
-export const GamesCTAs = [DigitalCollectiblesGamesCTA];
+export const GamesCTAs = [TrendingGamesSection, DigitalCollectiblesGamesCTA];
