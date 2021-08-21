@@ -1,4 +1,5 @@
-import { Flex, Image } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Image from 'next/image';
 import React from 'react';
 
 import Background from '../Background';
@@ -25,6 +26,8 @@ export default function DigitalCollectiblesGamesCTA() {
       ctaContent={
         <Flex pr="28">
           <Image
+            width="600px"
+            height="300px"
             src="/images/collectibles-group.png"
             alt="collectibles group"
           />

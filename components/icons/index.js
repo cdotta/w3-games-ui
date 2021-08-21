@@ -7,8 +7,12 @@ import clockSvg from '../../public/svgs/clock.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
 import genreSvg from '../../public/svgs/genre.svg';
+import heartSvg from '../../public/svgs/heart.svg';
 import mediumSvg from '../../public/svgs/medium.svg';
 import noteTextSvg from '../../public/svgs/note-text.svg';
+import searchSvg from '../../public/svgs/search.svg';
+import shopSvg from '../../public/svgs/shop.svg';
+import smsSvg from '../../public/svgs/sms.svg';
 import telegramSvg from '../../public/svgs/telegram.svg';
 import twitterSvg from '../../public/svgs/twitter.svg';
 import userSvg from '../../public/svgs/user.svg';
@@ -49,6 +53,12 @@ export const UserIcon = createIcon({
   path: userSvg(),
 });
 
+export const SearchIcon = createIcon({
+  displayName: 'SearchIcon',
+  viewBox: '0 0 20 20',
+  path: searchSvg(),
+});
+
 export const TelegramIcon = createIcon({
   displayName: 'TelegramIcon',
   viewBox: '0 0 24 24',
@@ -83,4 +93,22 @@ export const GenreIcon = createIcon({
   displayName: 'GenreIcon',
   viewBox: '0 0 15 14',
   path: genreSvg(),
+});
+
+export const HeartIcon = createIcon({
+  displayName: 'HeartIcon',
+  viewBox: '0 0 20 20',
+  path: heartSvg(),
+});
+
+export const ShopIcon = createIcon({
+  displayName: 'ShopIcon',
+  viewBox: '0 0 20 20',
+  path: shopSvg(),
+});
+
+export const SmsIcon = createIcon({
+  displayName: 'SmsIcon',
+  viewBox: '0 0 20 20',
+  path: smsSvg(),
 });

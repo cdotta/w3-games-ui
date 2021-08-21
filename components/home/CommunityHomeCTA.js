@@ -6,6 +6,8 @@ import CTAInfo from '../CTAInfo';
 import HCTA from '../HCTA';
 import MediaButtonsGroup from '../MediaButtonsGroup';
 
+// TODO: Replace Image
+
 export default function CommunityHomeCTA() {
   return (
     <HCTA

@@ -13,6 +13,7 @@ export default function HCTA({
       minHeight={`calc(100vh - ${additionalContentHeight})`}
       position="relative"
       align="center"
+      wrap="wrap"
       overflow="hidden"
     >
       {background}

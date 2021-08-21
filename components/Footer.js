@@ -47,6 +47,7 @@ export default function Footer() {
       paddingY="10"
       display="flex"
       justifyContent="center"
+      overflow="hidden"
     >
       <VStack width="fit-content" spacing="16">
         <HStack spacing="40">
