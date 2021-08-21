@@ -5,6 +5,7 @@ import arrowSquareDownSvg from '../../public/svgs/arrow-square-down.svg';
 import clockSvg from '../../public/svgs/clock.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
+import genreSvg from '../../public/svgs/genre.svg';
 import mediumSvg from '../../public/svgs/medium.svg';
 import noteTextSvg from '../../public/svgs/note-text.svg';
 import telegramSvg from '../../public/svgs/telegram.svg';
@@ -67,6 +68,12 @@ export const MediumIcon = createIcon({
 
 export const ClockIcon = createIcon({
   displayName: 'ClockIcon',
-  viewBox: '0 0 24 24',
+  viewBox: '0 0 22 22',
   path: clockSvg(),
+});
+
+export const GenreIcon = createIcon({
+  displayName: 'GenreIcon',
+  viewBox: '0 0 15 14',
+  path: genreSvg(),
 });

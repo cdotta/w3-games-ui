@@ -8,9 +8,9 @@ import VCTA from '../VCTA';
 const images = [
   { src: '/images/games/age-of-rust.png', alt: 'age of rust' },
   { src: '/images/games/skyweaver.png', alt: 'skyweaver' },
-  { src: '/images/pyramid.png', alt: 'pyramid' },
-  { src: '/images/9-lives.png', alt: '9 lives' },
-  { src: '/images/dissolution.png', alt: 'dissolution' },
+  { src: '/images/games/six-dragons.png', alt: 'six dragons' },
+  { src: '/images/games/9-lives.png', alt: '9 lives' },
+  { src: '/images/games/dissolution.png', alt: 'dissolution' },
   { src: '/images/games/lost-relics.png', alt: 'lost relics' },
 ];
 
