@@ -8,17 +8,20 @@ export default function CTAInfo({
   secondaryButtonText,
   secondaryButtonIcon,
   textAlign,
+  fontSizeTitle = '2xl',
+  fontSizeDescription = 'xl',
 }) {
   return (
     <Box>
-      <Heading size="2xl" mb="4" color="white" textAlign={textAlign}>
+      <Heading size={fontSizeTitle} mb="4" color="white" textAlign={textAlign}>
         {title}
       </Heading>
-      <Text fontSize="xl" mb="8" color="white" textAlign={textAlign}>
+      <Text fontSize={fontSizeDescription} color="white" textAlign={textAlign}>
         {description}
       </Text>
       {primaryButton && (
         <Button
+          mt="8"
           size="lg"
           colorScheme="customBlack"
           mr={6}
@@ -31,6 +34,7 @@ export default function CTAInfo({
       )}
       {secondaryButtonText && (
         <Button
+          mt="8"
           size="lg"
           colorScheme="customOrange"
           rightIcon={secondaryButtonIcon}
