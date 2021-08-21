@@ -63,7 +63,7 @@ export default function Footer() {
             </VStack>
           ))}
           <Box bgColor="rgba(255, 255, 255, 0.1)" p="10" pt="5">
-            <FormControl id="email" opacity="1">
+            <FormControl id="email">
               <FormLabel color="white" fontWeight="semibold">
                 Receive weekly news updates
               </FormLabel>
