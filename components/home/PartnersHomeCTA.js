@@ -1,4 +1,4 @@
-import { Flex, Image, SimpleGrid } from '@chakra-ui/react';
+import { Image, SimpleGrid } from '@chakra-ui/react';
 import React from 'react';
 
 import Background from '../Background';
@@ -27,6 +27,7 @@ export default function PartnersHomeCTA() {
     <VCTA
       background={<Background bgColor="black" />}
       direction="column"
+      isFullHeight={false}
       ctaInfo={
         <CTAInfo
           textAlign="center"
@@ -35,16 +36,14 @@ export default function PartnersHomeCTA() {
       }
       ctaContent={
         <SimpleGrid
-          columns="4"
+          columns={['2', undefined, '4']}
           spacingX="24"
           spacingY="14"
           alignItems="center"
           justifyContent="center"
         >
           {images.map(({ src, alt }, index) => (
-            <Flex key={index} flexShrink="0" justifyContent="center">
-              <Image src={src} alt={alt} />
-            </Flex>
+            <Image key={index} src={src} alt={alt} />
           ))}
         </SimpleGrid>
       }
