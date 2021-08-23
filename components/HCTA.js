@@ -14,7 +14,7 @@ export default function HCTA({
       position="relative"
       align="center"
       wrap="wrap"
-      overflow="hidden"
+      paddingY={['5', '20']}
     >
       {background}
       <Flex
