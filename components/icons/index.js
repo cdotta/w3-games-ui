@@ -10,6 +10,7 @@ import genreSvg from '../../public/svgs/genre.svg';
 import heartSvg from '../../public/svgs/heart.svg';
 import mediumSvg from '../../public/svgs/medium.svg';
 import noteTextSvg from '../../public/svgs/note-text.svg';
+import redArrowRightSvg from '../../public/svgs/red-arrow-right.svg';
 import searchSvg from '../../public/svgs/search.svg';
 import shopSvg from '../../public/svgs/shop.svg';
 import smsSvg from '../../public/svgs/sms.svg';
@@ -33,6 +34,12 @@ export const ArrowRightIcon = createIcon({
   displayName: 'ArrowRightIcon',
   viewBox: '0 0 18 19',
   path: arrowRightSvg(),
+});
+
+export const RedArrowRightIcon = createIcon({
+  displayName: 'RedArrowRightIcon',
+  viewBox: '0 0 18 19',
+  path: redArrowRightSvg(),
 });
 
 export const ArrowLeftIcon = createIcon({

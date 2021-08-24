@@ -1,12 +1,15 @@
-import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
+import { Flex, HStack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 
 import Background from '../Background';
 import CTAInfo from '../CTAInfo';
 import { ArrowRightIcon } from '../icons';
+import NewsCard from '../NewsCard';
 import VCTA from '../VCTA';
 
+const imageWidth = '352px';
+const imageHeight = '260px';
 const time = '5 min read';
 const title = 'Some amazing catchy article title for attention';
 const description =
@@ -17,22 +20,34 @@ const news = [
     time,
     title,
     description,
-    imageUrl: '/images/dinox-world.png',
-    imageAlt: 'dinox world',
+    image: {
+      url: '/images/news/dinox-mining.png',
+      alt: 'dinox world',
+      height: imageHeight,
+      width: imageWidth,
+    },
   },
   {
     time,
     title,
     description,
-    imageUrl: '/images/splinterlands.png',
-    imageAlt: 'splinterlands',
+    image: {
+      url: '/images/news/splinterlands.png',
+      alt: 'splinterlands',
+      height: imageHeight,
+      width: imageWidth,
+    },
   },
   {
     time,
     title,
     description,
-    imageUrl: '/images/axie-infinity-can.png',
-    imageAlt: 'axie infinity',
+    image: {
+      url: '/images/news/axs.png',
+      alt: 'axie infinity',
+      height: imageHeight,
+      width: imageWidth,
+    },
   },
 ];
 
@@ -53,27 +68,9 @@ export default function NewsHomeCTA() {
       ctaContent={
         <>
           <Flex gridGap={['2', '8']} wrap="wrap" justifyContent="center">
-            {news.map(
-              ({ imageUrl, imageAlt, time, title, description }, index) => (
-                <Box key={index} maxWidth="22rem">
-                  <Image src={imageUrl} alt={imageAlt} />
-                  <Box p="8" bgColor="warmBlack" width="100%">
-                    <Text color="white" fontWeight="semibold">
-                      <Text as="span" color="customOrange.500">
-                        GAMING
-                      </Text>{' '}
-                      - {time}
-                    </Text>
-                    <Text color="white" fontWeight="semibold" fontSize="2xl">
-                      {title}
-                    </Text>
-                    <Text color="white" noOfLines="3">
-                      {description}
-                    </Text>
-                  </Box>
-                </Box>
-              ),
-            )}
+            {news.map((aNew, index) => (
+              <NewsCard key={index} {...aNew} />
+            ))}
           </Flex>
           <HStack
             width="100%"

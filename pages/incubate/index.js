@@ -6,8 +6,8 @@ import Page from '../../components/Page';
 export default function Incubate() {
   return (
     <Page>
-      {IncubateCTAs.map((GamesCTA, index) => (
-        <GamesCTA key={index} />
+      {IncubateCTAs.map((IncubateCTA, index) => (
+        <IncubateCTA key={index} />
       ))}
     </Page>
   );
