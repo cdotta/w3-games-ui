@@ -8,7 +8,7 @@ export default function DetailedNewsCard({
   title,
   description,
   readTime,
-  // creationTime,
+  creationTime,
 }) {
   return (
     <Flex
@@ -39,7 +39,7 @@ export default function DetailedNewsCard({
         <Text flexGrow="1">{description}</Text>
         <Flex justifyContent="space-between">
           <Text as="span" color="customBlack.200" fontSize="sm">
-            {readTime}
+            {creationTime}
           </Text>
           <Flex alignItems="center">
             <Text

@@ -20,7 +20,7 @@ export const latestNews = [
     title,
     image: {
       url: '/images/news/chainport-derace.png',
-      alt: 'splinterlands',
+      alt: 'chainport derace',
       width: '400px',
       height: '260px',
     },
@@ -30,7 +30,7 @@ export const latestNews = [
     title,
     image: {
       url: '/images/news/gold-fever.png',
-      alt: 'axie infinity',
+      alt: 'gold fever',
       width: '400px',
       height: '260px',
     },
