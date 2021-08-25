@@ -1,11 +1,14 @@
 import React from 'react';
 
+import { AboutUsCTAs } from '../../components/about-us';
 import Page from '../../components/Page';
 
 export default function AboutUs() {
   return (
     <Page>
-      <h1>About Us</h1>
+      {AboutUsCTAs.map((AboutUsCTA, index) => (
+        <AboutUsCTA key={index} />
+      ))}
     </Page>
   );
 }
