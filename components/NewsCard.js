@@ -1,4 +1,5 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
+import Image from 'next/image';
 import React, { useMemo } from 'react';
 
 export default function NewsCard({
@@ -28,7 +29,9 @@ export default function NewsCard({
         alt={image.alt}
         height={image.height}
         width={image.width}
-        fit="cover"
+        layout="responsive"
+        objectFit="cover"
+        quality="100"
       />
       <Box {...finalInnerBoxProperties}>
         <Text color="white" fontWeight="semibold">
