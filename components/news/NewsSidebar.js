@@ -3,7 +3,7 @@ import React from 'react';
 
 import MediaButtonsGroup from '../MediaButtonsGroup';
 
-const gamming = 'Gaming';
+const gaming = 'Gaming';
 const collectibles = 'Collectibles';
 
 const archives = [gamming, collectibles, gamming, collectibles, gamming];
