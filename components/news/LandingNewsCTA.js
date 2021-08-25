@@ -60,18 +60,18 @@ export default function LandingNewsCTA() {
         width="100%"
         justifyContent="flex-start"
         alignItems="stretch"
-        flexDirection={['column', 'column', 'row']}
+        flexDirection={['column', 'column', 'column', 'row']}
       >
         <Flex
-          w="container.lg"
+          flexGrow="1"
+          mr={['0', '0', '0', '10']}
           h="lg"
-          mr="10"
           backgroundImage={`linear-gradient(119.17deg, #F5F6F8 13.96%, rgba(245, 246, 248, 0) 67.05%), url('/images/news/game-of-the-season.png')`}
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
         >
-          <VStack maxW="sm" pt={10} pl={10} alignItems="flex-start" spacing={4}>
+          <VStack maxW="sm" pt="10" pl="10" alignItems="flex-start" spacing={4}>
             <Heading>Most hype games of the season</Heading>
             <HStack>
               <Image
@@ -89,7 +89,7 @@ export default function LandingNewsCTA() {
             </Text>
           </VStack>
         </Flex>
-        <Flex w="md" bgColor="white">
+        <Flex maxW="md" bgColor="white" mt={['10', '10', '10', '0']}>
           <Flex flexDirection="column" p="9">
             <Heading as="h1" fontSize="xl" fontWeight="extrabold">
               Top Stories
@@ -110,15 +110,27 @@ export default function LandingNewsCTA() {
           </Flex>
         </Flex>
       </Flex>
-      <Flex w="100%" bgColor="white" height="72" flexDirection="column" p="10">
+      <Flex w="100%" bgColor="white" flexDirection="column" p="10">
         <Heading as="h1" fontSize="xl" fontWeight="extrabold">
           Trending
         </Heading>
-        <Flex>
+        <Flex flexDirection={['column', 'column', 'column', 'row']}>
           {trendingInfo.map(({ src, alt, title, description }, index) => {
             return (
-              <HStack spacing="4" key={index} py="12" pr="4">
-                <Image src={src} alt={alt} width="36" height="24" />
+              <Flex
+                key={index}
+                py="12"
+                pr="4"
+                flexDirection={['column', 'row']}
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width="36"
+                  height="24"
+                  marginX={['0', '2']}
+                  marginY={['2', '0']}
+                />
                 <Flex
                   flexDirection="column"
                   height="24"
@@ -127,7 +139,7 @@ export default function LandingNewsCTA() {
                   <Text fontWeight="bold">{title}</Text>
                   <Text fontSize="sm">{description}</Text>
                 </Flex>
-              </HStack>
+              </Flex>
             );
           })}
         </Flex>
