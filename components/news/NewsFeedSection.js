@@ -9,7 +9,7 @@ import NewsSidebar from './NewsSidebar';
 export default function NewsFeedSection() {
   return (
     <Box as="section" padding="14">
-      <Text as="h2" fontSize="2xl">
+      <Text as="h2" fontSize="2xl" fontWeight="bold" mb="4">
         Latest
       </Text>
       <Flex gridGap={['2', '8']} wrap="wrap" justifyContent="space-between">
