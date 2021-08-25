@@ -3,6 +3,7 @@ import { createIcon } from '@chakra-ui/icon';
 import arrowLeftSvg from '../../public/svgs/arrow-left.svg';
 import arrowRightSvg from '../../public/svgs/arrow-right.svg';
 import arrowSquareDownSvg from '../../public/svgs/arrow-square-down.svg';
+import blackArrowRightSvg from '../../public/svgs/black-arrow-right.svg';
 import clockSvg from '../../public/svgs/clock.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
@@ -40,6 +41,12 @@ export const RedArrowRightIcon = createIcon({
   displayName: 'RedArrowRightIcon',
   viewBox: '0 0 18 19',
   path: redArrowRightSvg(),
+});
+
+export const BlackArrowRightIcon = createIcon({
+  displayName: 'BlackArrowRightIcon',
+  viewBox: '0 0 21 16',
+  path: blackArrowRightSvg(),
 });
 
 export const ArrowLeftIcon = createIcon({
