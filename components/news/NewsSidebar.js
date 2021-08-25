@@ -6,7 +6,7 @@ import MediaButtonsGroup from '../MediaButtonsGroup';
 const gaming = 'Gaming';
 const collectibles = 'Collectibles';
 
-const archives = [gamming, collectibles, gamming, collectibles, gamming];
+const archives = [gaming, collectibles, gaming, collectibles, gaming];
 
 const categories = [...archives, collectibles, gamming];
 
