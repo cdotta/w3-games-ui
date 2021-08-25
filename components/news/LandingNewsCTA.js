@@ -96,15 +96,13 @@ export default function LandingNewsCTA() {
             </Heading>
             <Flex flexDirection="column" alignItems="center">
               {topStories.map(({ text }, index) => (
-                <>
+                <div key={index}>
                   <HStack spacing="4" py="7">
-                    <Text key={index} fontSize="lg">
-                      {text}
-                    </Text>
+                    <Text fontSize="lg">{text}</Text>
                     <BlackArrowRightIcon />
                   </HStack>
                   <Divider orientation="horizontal" />
-                </>
+                </div>
               ))}
             </Flex>
           </Flex>
