@@ -8,7 +8,7 @@ const collectibles = 'Collectibles';
 
 const archives = [gaming, collectibles, gaming, collectibles, gaming];
 
-const categories = [...archives, collectibles, gamming];
+const categories = [...archives, collectibles, gaming];
 
 export default function NewsSidebar() {
   return (
