@@ -65,7 +65,7 @@ export default function LandingNewsCTA() {
         <Flex
           flexGrow="1"
           mr={['0', '0', '0', '10']}
-          h="lg"
+          minH={['lg', 'lg', 'lg', 'lg', 'lg', '4xl']}
           backgroundImage={`linear-gradient(119.17deg, #F5F6F8 13.96%, rgba(245, 246, 248, 0) 67.05%), url('/images/news/game-of-the-season.png')`}
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
