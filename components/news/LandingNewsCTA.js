@@ -65,7 +65,7 @@ export default function LandingNewsCTA() {
         <Flex
           flexGrow="1"
           mr={['0', '0', '0', '10']}
-          h="lg"
+          minH={['lg', 'lg', 'lg', 'lg', 'lg', '4xl']}
           backgroundImage={`linear-gradient(119.17deg, #F5F6F8 13.96%, rgba(245, 246, 248, 0) 67.05%), url('/images/news/game-of-the-season.png')`}
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
@@ -96,15 +96,13 @@ export default function LandingNewsCTA() {
             </Heading>
             <Flex flexDirection="column" alignItems="center">
               {topStories.map(({ text }, index) => (
-                <>
+                <div key={index}>
                   <HStack spacing="4" py="7">
-                    <Text key={index} fontSize="lg">
-                      {text}
-                    </Text>
+                    <Text fontSize="lg">{text}</Text>
                     <BlackArrowRightIcon />
                   </HStack>
                   <Divider orientation="horizontal" />
-                </>
+                </div>
               ))}
             </Flex>
           </Flex>
