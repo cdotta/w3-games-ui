@@ -1,5 +1,6 @@
 import { createIcon } from '@chakra-ui/icon';
 
+import addSquareSvg from '../../public/svgs/add-square.svg';
 import arrowLeftSvg from '../../public/svgs/arrow-left.svg';
 import arrowRightSvg from '../../public/svgs/arrow-right.svg';
 import arrowSquareDownSvg from '../../public/svgs/arrow-square-down.svg';
@@ -125,4 +126,10 @@ export const SmsIcon = createIcon({
   displayName: 'SmsIcon',
   viewBox: '0 0 20 20',
   path: smsSvg(),
+});
+
+export const AddSquareIcon = createIcon({
+  displayName: 'AddSquareIcon',
+  viewBox: '0 0 22 22',
+  path: addSquareSvg(),
 });
