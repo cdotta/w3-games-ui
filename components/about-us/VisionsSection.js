@@ -46,6 +46,7 @@ export default function VisionsSection() {
             key={index}
             background={<Background bgColor="black" />}
             isReverse={isReverse}
+            isFullHeight={false}
             ctaInfo={
               <>
                 <CTAInfo title={title} description={description} />

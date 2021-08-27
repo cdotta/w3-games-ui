@@ -5,12 +5,13 @@ export default function HCTA({
   background,
   ctaInfo,
   ctaContent,
+  isFullHeight = false,
   isReverse = false,
   additionalContentHeight = '0px',
 }) {
   return (
     <HStack
-      minHeight={`calc(100vh - ${additionalContentHeight})`}
+      minHeight={isFullHeight ? `calc(100vh - ${additionalContentHeight})` : ''}
       position="relative"
       align="center"
       wrap="wrap"

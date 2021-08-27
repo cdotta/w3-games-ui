@@ -112,7 +112,10 @@ export default function LandingNewsCTA() {
         <Heading as="h1" fontSize="xl" fontWeight="extrabold">
           Trending
         </Heading>
-        <Flex flexDirection={['column', 'column', 'column', 'row']}>
+        <Flex
+          flexDirection={['column', 'column', 'column', 'row']}
+          justifyContent="center"
+        >
           {trendingInfo.map(({ src, alt, title, description }, index) => {
             return (
               <Flex
