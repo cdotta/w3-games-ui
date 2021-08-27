@@ -1,7 +1,7 @@
 import { Box, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 
-export default function LandingHomeCTA() {
+export default function LandingAboutUsSection() {
   return (
     <Box
       backgroundColor="black"
