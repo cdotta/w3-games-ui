@@ -6,13 +6,26 @@ import DetailedNewsCard from './DetailedNewsCard';
 import { detailedNews, latestNews } from './newsData';
 import NewsSidebar from './NewsSidebar';
 
+const spaceBetween = 'space-between';
+
 export default function NewsFeedSection() {
   return (
     <Box as="section" padding="14">
       <Text as="h2" fontSize="2xl" fontWeight="bold" mb="4">
         Latest
       </Text>
-      <Flex gridGap={['2', '8']} wrap="wrap" justifyContent="space-between">
+      <Flex
+        gridGap={['2', '8', '8', '8', '8', '24']}
+        wrap="wrap"
+        justifyContent={[
+          spaceBetween,
+          spaceBetween,
+          spaceBetween,
+          spaceBetween,
+          spaceBetween,
+          'center',
+        ]}
+      >
         {latestNews.map((latestNew, index) => (
           <NewsCard
             key={index}

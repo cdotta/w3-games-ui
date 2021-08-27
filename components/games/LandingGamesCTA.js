@@ -91,6 +91,8 @@ export default function LandingGamesCTA() {
         width="1120px"
         height="550px"
         layout="responsive"
+        quality={100}
+        objectFit="cover"
       />
       <CarrouselPaginator activePage={1} />
     </Box>
