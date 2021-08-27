@@ -5,7 +5,7 @@ export default function HCTA({
   background,
   ctaInfo,
   ctaContent,
-  isFullHeight = false,
+  isFullHeight = true,
   isReverse = false,
   additionalContentHeight = '0px',
 }) {
