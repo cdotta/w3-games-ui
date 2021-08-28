@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: 'Games', route: '/games' },
   { label: 'News', route: '/news' },
   { label: 'Incubate', route: '/incubate' },
+  { label: 'Guild', route: '/guild' },
   { label: 'About us', route: '/about-us' },
 ];
 
