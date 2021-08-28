@@ -4,7 +4,7 @@ import DiscoverGamesSection from './DiscoverGamesSection';
 import LandingGamesCTA from './LandingGamesCTA';
 import TrendingGamesSection from './TrendingGamesSection';
 
-export const GamesCTAs = [
+export const GamesSections = [
   LandingGamesCTA,
   TrendingGamesSection,
   ComingSoonGamesCTA,

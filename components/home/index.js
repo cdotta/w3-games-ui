@@ -5,7 +5,7 @@ import LandingHomeCTA from './LandingHomeCTA';
 import NewsHomeCTA from './NewsHomeCTA';
 import PartnersHomeCTA from './PartnersHomeCTA';
 
-export const HomeCTAs = [
+export const HomeSections = [
   LandingHomeCTA,
   GamesHomeCTA,
   CatalogHomeCTA,
