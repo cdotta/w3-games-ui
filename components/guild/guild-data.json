@@ -1,0 +1,37 @@
+{
+  "earnSection": {
+    "title": "Earn playing the games you love",
+    "description": "Playing games should first and foremost be fun, even when you’re earning money from them, and that is our top most priority at W3 games guild.",
+    "mainImage": {
+      "src": "/images/guild/axie-infinity.png",
+      "alt": "axie infinity"
+    },
+    "games": [
+      {
+        "name": "Axie Infinity",
+        "imageSrc": "/images/guild/axie-infinity-logo.png",
+        "imageAlt": "axie infinity logo"
+      },
+      {
+        "name": "League of Kingdoms",
+        "imageSrc": "/images/guild/league-of-kingdoms-logo.png",
+        "imageAlt": "league of kingdoms logo"
+      },
+      {
+        "name": "Lost Relics",
+        "imageSrc": "/images/guild/lost-relics-logo.png",
+        "imageAlt": "lost relics logo"
+      },
+      {
+        "name": "Gods Unchained",
+        "imageSrc": "/images/guild/gods-unchained-logo.png",
+        "imageAlt": "gods unchained logo"
+      },
+      {
+        "name": "The sandbox",
+        "imageSrc": "/images/guild/the-sandbox-logo.png",
+        "imageAlt": "the sandbox logo"
+      }
+    ]
+  }
+}
