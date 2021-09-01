@@ -9,6 +9,7 @@ import clockSvg from '../../public/svgs/clock.svg';
 import discordSvg from '../../public/svgs/discord.svg';
 import gamesSvg from '../../public/svgs/games.svg';
 import genreSvg from '../../public/svgs/genre.svg';
+import hamburgerSvg from '../../public/svgs/hamburger.svg';
 import heartSvg from '../../public/svgs/heart.svg';
 import mediumSvg from '../../public/svgs/medium.svg';
 import noteTextSvg from '../../public/svgs/note-text.svg';
@@ -132,4 +133,10 @@ export const AddSquareIcon = createIcon({
   displayName: 'AddSquareIcon',
   viewBox: '0 0 22 22',
   path: addSquareSvg(),
+});
+
+export const HamburgerIcon = createIcon({
+  displayName: 'HamburgerIcon',
+  viewBox: '0 0 20 18',
+  path: hamburgerSvg(),
 });
