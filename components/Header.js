@@ -110,7 +110,7 @@ export default function Header() {
             h="100%"
             borderRadius="0"
             w={mobileHeaderHeight}
-            colorScheme="customBlack"
+            colorScheme="warmBlackButton"
             aria-label="My Account"
             icon={<HamburgerIcon w="5" />}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
