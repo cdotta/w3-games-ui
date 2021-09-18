@@ -10,10 +10,14 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { HamburgerIcon, UserIcon } from './icons';
-import MediaButtonsGroup from './MediaButtonsGroup';
+import { selectUser } from '../../lib/store/selectors';
+import { fetchUser } from '../../lib/store/user.reducer';
+import { HamburgerIcon, UserIcon } from '../icons';
+import MediaButtonsGroup from '../MediaButtonsGroup';
+import LoginForm from './LoginForm';
 
 const NAV_ITEMS = [
   { label: 'Home', route: '/' },
@@ -50,10 +54,26 @@ export const regularHeaderHeight = '80px';
 
 export default function Header() {
   const router = useRouter();
+  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
+  const handleLoginFormClose = useCallback(() => setIsLoginFormOpen(false), []);
+
+  const handleMyAccountClick = useCallback(() => {
+    if (!user.value) {
+      setIsLoginFormOpen(true);
+    }
+  }, [user]);
 
   return (
     <Flex position="relative">
+      {isLoginFormOpen && <LoginForm onClose={handleLoginFormClose} />}
       <Flex
         pl={['6', '10']}
         h={[mobileHeaderHeight, regularHeaderHeight]}
@@ -96,8 +116,9 @@ export default function Header() {
             borderRadius="0"
             size="lg"
             colorScheme="customOrange"
+            onClick={handleMyAccountClick}
           >
-            My Account
+            {user.value ? 'My Account' : 'Login'}
           </Button>
         </Flex>
         <Flex

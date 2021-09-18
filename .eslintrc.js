@@ -34,5 +34,6 @@ module.exports = {
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
     'unicorn/filename-case': 'off',
+    'unicorn/no-null': 'off',
   },
 };
