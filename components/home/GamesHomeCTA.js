@@ -1,4 +1,5 @@
 import { HStack, Image, VStack } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import Background from '../Background';
@@ -40,6 +41,7 @@ const images = {
 // TODO: Replace Image
 
 export default function GamesHomeCTA() {
+  const router = useRouter();
   const imageMapFunction = ({ src, alt, width, height }, index) => (
     <Image
       key={index}
@@ -58,8 +60,11 @@ export default function GamesHomeCTA() {
         <CTAInfo
           title="Access the very best web3 games"
           description="Curated web3 games designed for your ultimate pleasure. Discover and play original titles from our partners"
-          secondaryButtonText="Discover games"
-          secondaryButtonIcon={<GamesIcon w={6} h={6} />}
+          secondaryButton={{
+            title: 'Discover games',
+            icon: <GamesIcon w={6} h={6} />,
+            onClick: () => router.push('/games'),
+          }}
         />
       }
       ctaContent={

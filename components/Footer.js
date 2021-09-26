@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import { ArrowRightIcon } from './icons/index';
@@ -21,21 +22,25 @@ const sections = [
   {
     title: 'Partners',
     links: [
-      { label: 'Collaborate' },
-      { label: 'Incubate' },
-      { label: 'Feature Game' },
+      { label: 'Collaborate', href: '/' },
+      { label: 'Incubate', href: '/incubate' },
+      { label: 'Feature Game', href: '/games' },
     ],
   },
   {
     title: 'Information',
-    links: [{ label: 'FAQ' }, { label: 'News' }, { label: 'Support' }],
+    links: [
+      { label: 'FAQ', href: '/' },
+      { label: 'News', href: '/news' },
+      { label: 'Support', href: '/' },
+    ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About us' },
-      { label: 'Careers' },
-      { label: 'Contact us' },
+      { label: 'About us', href: '/about-us' },
+      { label: 'Careers', href: '/' },
+      { label: 'Contact us', href: '/' },
     ],
   },
 ];
@@ -56,10 +61,12 @@ export default function Footer() {
               <Text fontWeight="semibold" color="white" mb="1">
                 {title}
               </Text>
-              {links.map(({ label }, index) => (
-                <Text color="white" opacity="0.75" key={index}>
-                  {label}
-                </Text>
+              {links.map(({ label, href }, index) => (
+                <Link key={index} href={href} passHref>
+                  <Text color="white" opacity="0.75" as="a">
+                    {label}
+                  </Text>
+                </Link>
               ))}
             </VStack>
           ))}

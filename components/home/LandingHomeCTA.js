@@ -20,8 +20,10 @@ export default function LandingHomeCTA() {
             title: 'Read whitepaper',
             icon: <NoteTextIcon w={6} h={6} />,
           }}
-          secondaryButtonText="Find out more"
-          secondaryButtonIcon={<ArrowSquareDownIcon w={6} h={6} />}
+          secondaryButton={{
+            title: 'Find out more',
+            icon: <ArrowSquareDownIcon w={6} h={6} />,
+          }}
         />
       }
       background={

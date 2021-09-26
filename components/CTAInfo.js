@@ -5,8 +5,7 @@ export default function CTAInfo({
   title,
   description,
   primaryButton,
-  secondaryButtonText,
-  secondaryButtonIcon,
+  secondaryButton,
   textAlign,
   fontSizeTitle = '2xl',
   fontSizeDescription = 'xl',
@@ -28,18 +27,24 @@ export default function CTAInfo({
           rightIcon={primaryButton.icon}
           bgColor={primaryButton.bgColor}
           color={primaryButton.color}
+          onClick={() =>
+            primaryButton.onClick ? primaryButton.onClick() : null
+          }
         >
           {primaryButton.title}
         </Button>
       )}
-      {secondaryButtonText && (
+      {secondaryButton && (
         <Button
           mt="8"
           size="lg"
           colorScheme="customOrange"
-          rightIcon={secondaryButtonIcon}
+          rightIcon={secondaryButton.icon}
+          onClick={() =>
+            secondaryButton.onClick ? secondaryButton.onClick() : null
+          }
         >
-          {secondaryButtonText}
+          {secondaryButton.title}
         </Button>
       )}
     </Box>
