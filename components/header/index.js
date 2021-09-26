@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { selectUser } from '../../lib/store/selectors';
 import { fetchUser } from '../../lib/store/user.reducer';
-import { HamburgerIcon, UserIcon } from '../icons';
+import { ArrowRightIcon, HamburgerIcon, UserIcon } from '../icons';
 import MediaButtonsGroup from '../MediaButtonsGroup';
 import LoginForm from './LoginForm';
 
@@ -110,9 +110,16 @@ export default function Header() {
         >
           <MediaButtonsGroup mr="4" />
           <Button
+            minWidth="40"
             fontSize="md"
             h="100%"
-            rightIcon={<UserIcon w={4} h={4} />}
+            rightIcon={
+              user.value ? (
+                <UserIcon w={5} h={5} />
+              ) : (
+                <ArrowRightIcon w={6} h={6} />
+              )
+            }
             borderRadius="0"
             size="lg"
             colorScheme="customOrange"
@@ -132,7 +139,7 @@ export default function Header() {
             borderRadius="0"
             w={mobileHeaderHeight}
             colorScheme="warmBlackButton"
-            aria-label="My Account"
+            aria-label="Menu"
             icon={<HamburgerIcon w="5" />}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
@@ -142,7 +149,14 @@ export default function Header() {
             w={mobileHeaderHeight}
             colorScheme="customOrange"
             aria-label="My Account"
-            icon={<UserIcon w="6" h="6" />}
+            icon={
+              user.value ? (
+                <UserIcon w={6} h={6} />
+              ) : (
+                <ArrowRightIcon w={6} h={6} />
+              )
+            }
+            onClick={handleMyAccountClick}
           />
         </Flex>
       </Flex>
