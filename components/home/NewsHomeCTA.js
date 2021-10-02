@@ -8,46 +8,32 @@ import { ArrowRightIcon } from '../icons';
 import NewsCard from '../NewsCard';
 import VCTA from '../VCTA';
 
-const imageWidth = '352px';
-const imageHeight = '260px';
 const time = '5 min read';
 const title = 'Some amazing catchy article title for attention';
 const description =
   'It is a long established fact that reader will be distracted by the readable content of a page when looking at something';
-
+const category = 'Gaming';
 const news = [
   {
-    time,
     title,
     description,
-    image: {
-      url: '/images/news/dinox-mining.png',
-      alt: 'dinox world',
-      height: imageHeight,
-      width: imageWidth,
-    },
+    reading_time: time,
+    category,
+    image: { formats: { small: { url: '/images/news/dinox-mining.png' } } },
   },
   {
-    time,
     title,
     description,
-    image: {
-      url: '/images/news/splinterlands.png',
-      alt: 'splinterlands',
-      height: imageHeight,
-      width: imageWidth,
-    },
+    reading_time: time,
+    category,
+    image: { formats: { small: { url: '/images/news/splinterlands.png' } } },
   },
   {
-    time,
     title,
     description,
-    image: {
-      url: '/images/news/axs.png',
-      alt: 'axie infinity',
-      height: imageHeight,
-      width: imageWidth,
-    },
+    reading_time: time,
+    category,
+    image: { formats: { small: { url: '/images/news/axs.png' } } },
   },
 ];
 
@@ -69,7 +55,7 @@ export default function NewsHomeCTA() {
         <>
           <Flex gridGap={['2', '8']} wrap="wrap" justifyContent="center">
             {news.map((aNew, index) => (
-              <NewsCard key={index} {...aNew} />
+              <NewsCard key={index} {...aNew} width="352px" height="260" />
             ))}
           </Flex>
           <HStack
