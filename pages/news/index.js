@@ -27,11 +27,11 @@ export async function getStaticProps() {
     { data: latestNews },
     { data: gamesNews },
   ] = await Promise.all([
-    axios.get('main-news').catch(() => {}),
-    axios.get('top-stories').catch(() => []),
-    axios.get('trending-news').catch(() => []),
-    axios.get('latest-news').catch(() => []),
-    axios.get('games-news').catch(() => []),
+    axios.get('main-news').catch(() => ({ data: {} })),
+    axios.get('top-stories').catch(() => ({ data: [] })),
+    axios.get('trending-news').catch(() => ({ data: [] })),
+    axios.get('latest-news').catch(() => ({ data: [] })),
+    axios.get('games-news').catch(() => ({ data: [] })),
   ]);
   return {
     props: {
