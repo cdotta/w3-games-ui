@@ -20,7 +20,7 @@ export default function Home(properties) {
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 export async function getStaticProps() {
-  const { data } = await axios.get('partners').catch(() => []);
+  const { data } = await axios.get('partners').catch(() => ({ data: [] }));
   return {
     props: {
       partners: data || null,

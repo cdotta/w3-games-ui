@@ -1,12 +1,17 @@
-import { Box, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Image, Link, Text } from '@chakra-ui/react';
 import React, { useMemo } from 'react';
 
+import { getSafeImageUrl } from '../lib/imageSourceHelper';
+
 export default function NewsCard({
-  image,
-  time,
   title,
+  category,
+  reading_time,
+  image,
   description,
+  href,
+  height,
+  width,
   innerBoxProperties = {},
   theme = 'dark',
 }) {
@@ -23,27 +28,25 @@ export default function NewsCard({
   );
 
   return (
-    <Box maxWidth={image.width}>
+    <Link href={href} isExternal maxWidth={width}>
       <Image
-        src={image.url}
-        alt={image.alt}
-        height={image.height}
-        width={image.width}
-        layout="responsive"
+        src={getSafeImageUrl(image, 'small')}
+        height={height}
+        width={width}
+        alt="latest-image"
         objectFit="cover"
-        quality="100"
       />
       <Box {...finalInnerBoxProperties}>
         <Text color="white" fontWeight="semibold">
-          <Text as="span" color="customOrange.500">
-            GAMING
+          <Text as="span" color="customOrange.500" textTransform="uppercase">
+            {category}
           </Text>{' '}
           <Text
             as="span"
             color={isDarkTheme ? 'customOrange.500' : 'warmBlack'}
             opacity={isDarkTheme ? 1 : 0.3}
           >
-            - {time}
+            - {reading_time}
           </Text>
         </Text>
         <Text
@@ -57,6 +60,6 @@ export default function NewsCard({
           {description}
         </Text>
       </Box>
-    </Box>
+    </Link>
   );
 }
