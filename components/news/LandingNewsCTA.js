@@ -4,49 +4,18 @@ import {
   Heading,
   HStack,
   Image,
+  Link,
   Text,
   VStack,
 } from '@chakra-ui/react';
+import { useContext } from 'react';
 
+import { getSafeImageUrl } from '../../lib/imageSourceHelper';
+import { NewsContext } from '../../pages/news';
 import { BlackArrowRightIcon } from '../icons/index';
 
-const title = 'Amazing catchy title for the article';
-const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
-
-export const topStories = [
-  {
-    text: 'Coder Drew Studios secures massive funding for their new blockbuster',
-  },
-  {
-    text: 'Dinox partners with W3 games to revolutionize the blockchain gaming space',
-  },
-  {
-    text: 'Will web 3 games overthrow regular online games anytime soon?',
-  },
-];
-
-export const trendingInfo = [
-  {
-    title,
-    description,
-    src: '/images/news/argos.png',
-    alt: 'argos',
-  },
-  {
-    title,
-    description,
-    src: '/images/news/trending.png',
-    alt: 'trending',
-  },
-  {
-    title,
-    description,
-    src: '/images/news/trending-consoles.png',
-    alt: 'trending consoles',
-  },
-];
-
 export default function LandingNewsCTA() {
+  const { mainNews, topStories, trendingNews } = useContext(NewsContext);
   return (
     <VStack
       background="black"
@@ -62,47 +31,49 @@ export default function LandingNewsCTA() {
         alignItems="stretch"
         flexDirection={['column', 'column', 'column', 'row']}
       >
-        <Flex
+        <Link
+          href={mainNews.href}
+          isExternal
+          _hover={{ textDecoration: 'none' }}
+          display="flex"
           flexGrow="1"
           mr={['0', '0', '0', '10']}
           minH={['lg', 'lg', 'lg', 'lg', 'lg', '4xl']}
-          backgroundImage={`linear-gradient(119.17deg, #F5F6F8 13.96%, rgba(245, 246, 248, 0) 67.05%), url('/images/news/game-of-the-season.png')`}
+          backgroundImage={`linear-gradient(119.17deg, #F5F6F8 13.96%, rgba(245, 246, 248, 0) 67.05%), url('${mainNews.background.url}')`}
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
         >
           <VStack maxW="sm" pt="10" pl="10" alignItems="flex-start" spacing={4}>
-            <Heading>Most hype games of the season</Heading>
+            <Heading>{mainNews.title}</Heading>
             <HStack>
               <Image
-                src="/images/news/coder-drew.png"
-                alt="coder drew"
+                src={getSafeImageUrl(mainNews.author_image, 'thumbnail')}
+                alt="author picture"
                 fit="cover"
                 borderRadius="full"
                 boxSize="30px"
               />
-              <Text>Coder Drew</Text>
+              <Text>{mainNews.author_name}</Text>
             </HStack>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </Text>
+            <Text>{mainNews.description}</Text>
           </VStack>
-        </Flex>
+        </Link>
+
         <Flex maxW="md" bgColor="white" mt={['10', '10', '10', '0']}>
           <Flex flexDirection="column" p="9">
             <Heading as="h1" fontSize="xl" fontWeight="extrabold">
               Top Stories
             </Heading>
             <Flex flexDirection="column" alignItems="center">
-              {topStories.map(({ text }, index) => (
-                <div key={index}>
+              {topStories.map(({ title, href }, index) => (
+                <Link key={index} href={href} isExternal>
                   <HStack spacing="4" py="7">
-                    <Text fontSize="lg">{text}</Text>
+                    <Text fontSize="lg">{title}</Text>
                     <BlackArrowRightIcon />
                   </HStack>
                   <Divider orientation="horizontal" />
-                </div>
+                </Link>
               ))}
             </Flex>
           </Flex>
@@ -116,17 +87,20 @@ export default function LandingNewsCTA() {
           flexDirection={['column', 'column', 'column', 'row']}
           justifyContent="center"
         >
-          {trendingInfo.map(({ src, alt, title, description }, index) => {
+          {trendingNews.map(({ title, description, image, href }, index) => {
             return (
-              <Flex
+              <Link
+                href={href}
+                isExternal
+                display="flex"
                 key={index}
                 py="12"
                 pr="4"
                 flexDirection={['column', 'row']}
               >
                 <Image
-                  src={src}
-                  alt={alt}
+                  src={getSafeImageUrl(image, 'small')}
+                  alt="trending-description"
                   width="36"
                   height="24"
                   marginX={['0', '2']}
@@ -140,7 +114,7 @@ export default function LandingNewsCTA() {
                   <Text fontWeight="bold">{title}</Text>
                   <Text fontSize="sm">{description}</Text>
                 </Flex>
-              </Flex>
+              </Link>
             );
           })}
         </Flex>
