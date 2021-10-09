@@ -20,13 +20,24 @@ export default function Games(properties) {
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 export async function getStaticProps() {
-  const [{ data: carouselGames }] = await Promise.all([
+  const [
+    { data: carouselGames },
+    { data: comingSoonGames },
+    { data: discoverGames },
+    { data: trendingGames },
+  ] = await Promise.all([
     axios.get('carousel-games').catch(() => ({ data: [] })),
+    axios.get('coming-soon-games').catch(() => ({ data: [] })),
+    axios.get('discover-games').catch(() => ({ data: [] })),
+    axios.get('trending-games').catch(() => ({ data: [] })),
   ]);
 
   return {
     props: {
       carouselGames: carouselGames || null,
+      comingSoonGames: comingSoonGames || null,
+      discoverGames: discoverGames || null,
+      trendingGames: trendingGames || null,
     },
   };
 }
