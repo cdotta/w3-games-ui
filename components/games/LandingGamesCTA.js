@@ -5,20 +5,25 @@ import {
   Heading,
   HStack,
   IconButton,
+  Image,
   Input,
   InputGroup,
   InputLeftElement,
   Text,
 } from '@chakra-ui/react';
-import Image from 'next/image';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
+import { getSafeImageUrl } from '../../lib/imageSourceHelper';
+import { GamesContext } from '../../pages/games';
 import CarrouselPaginator from '../CarrouselPaginator';
 import { HeartIcon, SearchIcon, ShopIcon, SmsIcon } from '../icons';
 
 const filterTags = ['Adventure', 'Card', 'Action', 'Sports', 'Puzzle'];
 
 export default function LandingGamesCTA() {
+  const { carouselGames } = useContext(GamesContext);
+  const [activePage] = useState(1);
+
   return (
     <Box
       bgColor="black"
@@ -84,17 +89,19 @@ export default function LandingGamesCTA() {
           />
         </HStack>
       </HStack>
-      <Image
-        className="radius-18"
-        src="/images/games/dinox-world.png"
-        alt="dinox world"
-        width="1120px"
-        height="550px"
-        layout="responsive"
-        quality={100}
-        objectFit="cover"
-      />
-      <CarrouselPaginator activePage={1} />
+      {carouselGames.length > 0 && (
+        <>
+          <Image
+            className="radius-18"
+            src={getSafeImageUrl(carouselGames[activePage - 1].image)}
+            alt="carousel game"
+            width="1120px"
+            height="550px"
+            objectFit="cover"
+          />
+          <CarrouselPaginator activePage={activePage} />
+        </>
+      )}
     </Box>
   );
 }
