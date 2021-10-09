@@ -6,20 +6,22 @@ import {
   Flex,
   HStack,
   Image,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
 
+import { getSafeImageUrl } from '../../lib/imageSourceHelper';
 import { GenreIcon } from '../icons/index';
 
 export default function GameCard({
-  imageSrc,
-  name,
-  score,
-  genre,
+  image,
+  title,
+  rating,
+  category,
   author,
-  year,
-  isAvailable,
+  creationYear,
+  href,
 }) {
   return (
     <Flex direction="column">
@@ -27,18 +29,22 @@ export default function GameCard({
         borderTopRadius="14px"
         height="265px"
         width="204px"
-        src={imageSrc}
-        alt={name}
+        src={
+          image
+            ? getSafeImageUrl(image, 'small')
+            : '/images/games/placeholder.png'
+        }
+        alt="game-card"
         fit="cover"
       />
       <HStack justify="space-between" mt="4">
         <Text color="white" fontSize="lg">
-          {name}
+          {title}
         </Text>
         <Box>
           <Circle size="24px" border="1px solid" borderColor="customGreen">
             <Text as="span" color="customGreen" fontSize="xs">
-              {score}
+              {rating.toFixed(1)}
             </Text>
           </Circle>
         </Box>
@@ -46,7 +52,7 @@ export default function GameCard({
       <Divider mt="8" mb="1" />
       <HStack justify="space-between">
         <Text color="customBlack.100" fontSize="sm">
-          {genre}
+          {category}
         </Text>
         <GenreIcon />
       </HStack>
@@ -55,17 +61,20 @@ export default function GameCard({
           {author}
         </Text>
         <Text color="customBlack.100" fontSize="xs">
-          {year}
+          {creationYear}
         </Text>
       </HStack>
-      <Button
-        borderTopRadius="0"
-        borderBottomRadius="14px"
-        mt="1"
-        colorScheme={isAvailable ? 'greenButton' : 'grayButton'}
-      >
-        {isAvailable ? 'Play now for free' : 'Coming soon'}
-      </Button>
+      <Link href={href} _hover={{ textDecoration: 'none' }} isExternal>
+        <Button
+          isFullWidth
+          borderTopRadius="0"
+          borderBottomRadius="14px"
+          mt="1"
+          colorScheme={href ? 'greenButton' : 'grayButton'}
+        >
+          {href ? 'Play now for free' : 'Coming soon'}
+        </Button>
+      </Link>
     </Flex>
   );
 }

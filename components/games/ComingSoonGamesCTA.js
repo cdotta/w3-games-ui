@@ -4,53 +4,18 @@ import {
   Flex,
   Heading,
   HStack,
+  Link,
   Tag,
   TagLabel,
   VStack,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { GamesContext } from '../../pages/games';
 import CTAInfo from '../CTAInfo';
 
 export default function ComingSoonGamesCTA() {
-  const comingSoonGames = [
-    {
-      title: 'Gold Fever',
-      description:
-        'Face the horrors of the dark and haunting jungle as you engage in fast-paced battles against the opposing faction.',
-      src: '/images/games/gold-fever.png',
-      alt: 'gold fever',
-      tags: [
-        {
-          name: 'Action',
-          size: 'md',
-        },
-        {
-          name: 'Adventure',
-          size: 'md',
-        },
-      ],
-    },
-    {
-      title: 'DeRace',
-      description:
-        'DeRace is a complete NFT horse racing ecosystem where you can participate in horse races.',
-
-      src: '/images/games/horses.png',
-      alt: 'horses',
-      tags: [
-        {
-          name: 'Racing',
-          size: 'md',
-        },
-        {
-          name: 'Collectibles',
-          size: 'md',
-        },
-      ],
-    },
-  ];
-
+  const { comingSoonGames } = useContext(GamesContext);
   return (
     <VStack
       background="black"
@@ -68,46 +33,52 @@ export default function ComingSoonGamesCTA() {
         </Button>
       </HStack>
       <Flex justify="center" width="100%" gridGap={['2', '16']} wrap="wrap">
-        {comingSoonGames.map(({ title, description, src, tags }, index) => (
-          <Flex
-            key={index}
-            position="relative"
-            w="524px"
-            h="300px"
-            backgroundImage={`linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.51) 48.96%, rgba(0, 0, 0, 0) 100%), url('${src}')`}
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            alignItems="center"
-            justifyContent="flex-end"
-          >
-            <VStack maxW="3xs" alignItems="end">
-              <CTAInfo
-                title={title}
-                description={description}
-                fontSizeTitle="md"
-                fontSizeDescription="xs"
-              />
-              <HStack>
-                {tags.map(({ name, size }, index) => (
-                  <Tag
-                    key={index}
-                    size={size}
-                    borderRadius="full"
-                    bgColor="rgba(114, 106, 103,0.5)"
-                  >
-                    <TagLabel textColor="white">{name}</TagLabel>
-                  </Tag>
-                ))}
-              </HStack>
-              <Box>
-                <Button size="md" colorScheme="customOrange" mt="5">
-                  Add to watchlist
-                </Button>
-              </Box>
-            </VStack>
-          </Flex>
-        ))}
+        {comingSoonGames.map(
+          ({ title, description, tags, background, href }, index) => (
+            <Link
+              href={href}
+              isExternal
+              _hover={{ textDecoration: 'none' }}
+              display="flex"
+              key={index}
+              position="relative"
+              w="524px"
+              h="300px"
+              backgroundImage={`linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0.51) 48.96%, rgba(0, 0, 0, 0) 100%), url('${background.url}')`}
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
+              backgroundSize="cover"
+              alignItems="center"
+              justifyContent="flex-end"
+            >
+              <VStack maxW="3xs" alignItems="end">
+                <CTAInfo
+                  title={title}
+                  description={description}
+                  fontSizeTitle="md"
+                  fontSizeDescription="xs"
+                />
+                <HStack>
+                  {tags &&
+                    tags.split(',').map((name, index) => (
+                      <Tag
+                        key={index}
+                        borderRadius="full"
+                        bgColor="rgba(114, 106, 103,0.5)"
+                      >
+                        <TagLabel textColor="white">{name}</TagLabel>
+                      </Tag>
+                    ))}
+                </HStack>
+                <Box>
+                  <Button size="md" colorScheme="customOrange" mt="5">
+                    Add to watchlist
+                  </Button>
+                </Box>
+              </VStack>
+            </Link>
+          ),
+        )}
       </Flex>
     </VStack>
   );
