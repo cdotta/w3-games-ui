@@ -5,30 +5,32 @@ import {
   Heading,
   HStack,
   IconButton,
-  Image,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 
 import { getSafeImageUrl } from '../../lib/imageSourceHelper';
 import { GamesContext } from '../../pages/games';
-import CarrouselPaginator from '../CarrouselPaginator';
+import Carousel from '../Carousel';
+import CarouselPaginator from '../CarouselPaginator';
 import { HeartIcon, SearchIcon, ShopIcon, SmsIcon } from '../icons';
+import ImageWithLoading from '../ImageWithLoading';
 
 const filterTags = ['Adventure', 'Card', 'Action', 'Sports', 'Puzzle'];
 
 export default function LandingGamesCTA() {
   const { carouselGames } = useContext(GamesContext);
-  const [activePage] = useState(1);
+  const [activePage, setActivePage] = useState(1);
 
   return (
     <Box
       bgColor="black"
       pt={['2', '20']}
-      paddingX={['2', '40']}
+      paddingX={['2', '2', '10', '40']}
       overflow="hidden"
     >
       <Container maxWidth="container.md">
@@ -91,15 +93,31 @@ export default function LandingGamesCTA() {
       </HStack>
       {carouselGames.length > 0 && (
         <>
-          <Image
-            className="radius-18"
-            src={getSafeImageUrl(carouselGames[activePage - 1].image)}
-            alt="carousel game"
-            width="1120px"
-            height="550px"
-            objectFit="cover"
+          <Carousel
+            value={activePage - 1}
+            onChange={() => {}}
+            slides={carouselGames.map((carouselGame, index) => (
+              <Link
+                key={index}
+                href={carouselGames[activePage - 1].href}
+                isExternal
+              >
+                <ImageWithLoading
+                  className="radius-18"
+                  src={getSafeImageUrl(carouselGame.image)}
+                  alt="carousel game"
+                  width="1120px"
+                  height="550px"
+                  objectFit="cover"
+                />
+              </Link>
+            ))}
           />
-          <CarrouselPaginator activePage={activePage} />
+          <CarouselPaginator
+            pages={carouselGames.length}
+            activePage={activePage}
+            onPageChange={(page) => setActivePage(page)}
+          />
         </>
       )}
     </Box>
