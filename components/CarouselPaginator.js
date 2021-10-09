@@ -1,11 +1,12 @@
 import { Box, HStack } from '@chakra-ui/react';
 import React from 'react';
 
-export default function CarrouselPaginator({ activePage }) {
-  const pages = Array.from({ length: 10 });
+export default function CarouselPaginator({ activePage, pages, onPageChange }) {
+  const pagesArray = Array.from({ length: pages });
+
   return (
     <HStack spacing="2" marginTop="5">
-      {pages.map((_, index) => {
+      {pagesArray.map((_, index) => {
         const pageNumber = index + 1;
         return (
           <Box
@@ -17,6 +18,8 @@ export default function CarrouselPaginator({ activePage }) {
             borderRadius="20px"
             key={pageNumber}
             cursor="pointer"
+            role="button"
+            onClick={() => onPageChange(pageNumber)}
           />
         );
       })}
