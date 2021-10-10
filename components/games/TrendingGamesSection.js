@@ -1,46 +1,11 @@
 import { Button, Flex, Heading, HStack, VStack } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { GamesContext } from '../../pages/games';
 import GameCard from './GameCard';
 
-const placeholderGame = {
-  imageSrc: '/images/games/placeholder.png',
-  score: 4.8,
-  genre: 'Action | Battle',
-  author: 'CoderDrew Studios',
-  year: '2021',
-  isAvailable: true,
-};
-
-const trendingGames = [
-  {
-    ...placeholderGame,
-    imageSrc: '/images/games/axie-infinity.png',
-    name: 'Axie Infinity',
-  },
-  {
-    ...placeholderGame,
-    imageSrc: '/images/games/lost-relics.png',
-    name: 'Lost Relics',
-  },
-  {
-    ...placeholderGame,
-    imageSrc: '/images/games/splinterlands.png',
-    name: 'Splinterlands',
-  },
-  {
-    ...placeholderGame,
-    imageSrc: '/images/games/age-of-rust.png',
-    name: 'Age of Rust',
-  },
-  {
-    ...placeholderGame,
-    imageSrc: '/images/games/skyweaver.png',
-    name: 'Skyweaver',
-  },
-];
-
 export default function TrendingGamesSection() {
+  const { trendingGames } = useContext(GamesContext);
   return (
     <VStack
       background="black"
@@ -65,7 +30,7 @@ export default function TrendingGamesSection() {
         gridGap="4"
       >
         {trendingGames.map((trendingGame, index) => (
-          <GameCard key={index} {...trendingGame} />
+          <GameCard key={index} {...trendingGame.game} />
         ))}
       </Flex>
     </VStack>
