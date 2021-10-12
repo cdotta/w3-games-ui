@@ -39,5 +39,6 @@ export async function getStaticProps() {
       discoverGames: discoverGames || null,
       trendingGames: trendingGames || null,
     },
+    revalidate: 60,
   };
 }
