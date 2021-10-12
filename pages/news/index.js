@@ -41,5 +41,6 @@ export async function getStaticProps() {
       latestNews: latestNews || null,
       gamesNews: gamesNews || null,
     },
+    revalidate: 60,
   };
 }
